@@ -5,6 +5,9 @@ from langchain_core.prompts import PromptTemplate, load_prompt
 
 # Load environment variables from a .env file
 load_dotenv()
+# Initialize the ChatGoogleGenerativeAI model
+model = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0.4)
+
 
 # Set the header of the Streamlit app
 st.header('Research Tool')
@@ -40,9 +43,6 @@ prompt = template.invoke({
     'style_input': style_input,
     'length_input': length_input
 })
-
-# Initialize the ChatGoogleGenerativeAI model
-model = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0.4)
 
 # Create a button in the Streamlit app
 if st.button("Summarize"):
