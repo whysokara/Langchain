@@ -15,4 +15,4 @@
 * ChatPromptTemplate
 * load prompt
 
-#### __Message Placeholder__ in langchain is a special placeholder used inside a chatprompttemplate to dynamically insert chat history or a list of messages at runtime 
+**Message Placeholder** in langchain is a special placeholder used inside a chatprompttemplate to dynamically insert chat history or a list of messages at runtime 
