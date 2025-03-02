@@ -5,11 +5,18 @@ load_dotenv()
 
 model = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0.4)
 
-
+chat_history =  []
+print("Welcome to bot K")
 while True:
+
+    
     user_input = input("You: ")
+    chat_history.append(user_input)
     if user_input == 'exit':
         break
-    result = model.invoke(user_input)
+    result = model.invoke(chat_history)
+    chat_history.append(result.content)
     print("AI: ", result.content)
+
+print(chat_history)
 
