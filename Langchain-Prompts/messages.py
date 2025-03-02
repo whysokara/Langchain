@@ -7,7 +7,7 @@ load_dotenv()
 model = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0.4)
 
 messages = [
-    SystemMessage(content='You are ahelpful assistant'),
+    SystemMessage(content='You are a helpful assistant'),
     # HumanMessage(content='Tell me everything about human micro expressions..')
     HumanMessage(content='Tell me capital of India')
 ]
