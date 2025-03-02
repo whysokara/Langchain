@@ -46,7 +46,12 @@ model = ChatGoogleGenerativeAI(model='gemini-1.5-pro', temperature=0.4)
 
 # Create a button in the Streamlit app
 if st.button("Summarize"):
-    # If the button is clicked, invoke the model with the prompt
-    result = model.invoke(prompt)
+
+    chain = template | model
+    result = chain.invoke({
+        'paper_input': paper_input,
+        'style_input': style_input,
+        'length_input': length_input
+    })
     # Display the result in the Streamlit app
     st.write(result.content)
